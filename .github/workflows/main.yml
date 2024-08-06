@@ -1,0 +1,19 @@
+name: My Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      VAR1: "earth"
+    steps:
+      - name: access VAR1
+        run: echo "Value is $VAR1"
+      - name: print github context
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Workflow: $GITHUB_WORKFLOW"
